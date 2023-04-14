@@ -188,6 +188,9 @@ const showPlayerX = ref({ playing: props.playerX.turn });
         {{ playerO.playerName }} spelar som O
       </p>
 
+      <p v-if="playerX.turn">{{ playerX.playerName }}s tur</p>
+      <p v-if="playerO.turn">{{ playerO.playerName }}s tur</p>
+
       <div class="winner" v-if="showWinner">
         <p v-if="playerO.turn">{{ playerX.playerName }} vann!</p>
         <p v-else>{{ playerO.playerName }} vann!</p>
@@ -207,9 +210,6 @@ const showPlayerX = ref({ playing: props.playerX.turn });
         <h2 v-if="square.checkedX">X</h2>
       </div>
     </div>
-
-    <p v-if="playerX.turn">{{ playerX.playerName }}</p>
-    <p v-if="playerO.turn">{{ playerO.playerName }}</p>
   </div>
 </template>
 <style scoped>
